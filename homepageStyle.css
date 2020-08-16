@@ -1,0 +1,190 @@
+.mainContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh minmax(60vh, auto) minmax(30vh, auto) minmax(20vh, auto) 10vh;
+    grid-template-areas: "hd" "ct" "lnk" "bt" "ft";
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    grid-area: hd;
+    padding: 0.5% 0.5% 2% 0.5%;
+    background-color: #e6e6e6;
+}
+
+h1.mainHeading {
+    display: inline;
+    font-weight: 100;
+    font-size: 3.1em;
+}
+
+.linkContainer {
+    grid-area: lnk;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.link {
+    padding: 1%;
+    color: #4ba4f2;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.blogLink {
+    padding-left: 5%;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 200;
+}
+
+.blogLink:hover {
+    color: #0079c9;
+}
+
+.content {
+    grid-area: ct;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2%;
+}
+
+.blogPostCard {
+    width: 100%;
+    background-color: lightgray;
+    padding: 0.5%;
+    overflow: hidden;
+    font-family: inherit;
+    border-radius: 1.25%;
+}
+
+#blog1 {
+    background-image: url("Blog1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    background-size: cover;
+}
+
+#blog2 {
+    background-image: url("Blog2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    background-size: cover;
+}
+
+#blog3 {
+    background-image: url("Blog3.jfif");
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.blogPostCard:hover {
+    box-shadow: 3px 3px 5px grey;
+}
+
+.buttonContainer {
+    grid-area: bt;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#button2,
+#button1 {
+    background-color: white;
+    color: #4ba4f2;
+    font-weight: 700;
+    border: 1px solid #4ba4f2;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2% 3%;
+    padding: 3%;
+    font-size: 1.5em;
+}
+
+#button1:hover,
+#button2:hover {
+    background-color: #4ba4f2;
+    color: white;
+    transition-duration: 500ms;
+}
+
+footer {
+    grid-area: ft;
+    padding: 0.5%;
+    background-color: #525252;
+    color: white;
+}
+
+.heading {
+    font-size: 1.5em;
+    color: #4ba4f2;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 200;
+}
+
+@media (min-width:600px) and (max-width:900px) {
+    .mainContainer {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 10vh 55vh 25vh 10vh;
+        grid-template-areas: "hd hd hd hd" "ct ct ct ct" "lnk lnk lnk bt" "ft ft ft ft";
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .content {
+        flex-direction: row;
+    }
+    .blogPostCard {
+        width: 30%;
+    }
+    h1.mainHeading {
+        font-size: 3em;
+    }
+    #button1,
+    #button2 {
+        font-size: 1.25em;
+        padding: 5%;
+    }
+}
+
+@media (min-width:901px) {
+    .mainContainer {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 10vh 30vh 50vh 10vh;
+        grid-template-areas: "hd hd hd hd hd hd hd hd" "lnk ct ct ct ct ct ct ct" "bt ct ct ct ct ct ct ct" "ft ft ft ft ft ft ft ft";
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .content {
+        flex-direction: row;
+    }
+    .blogPostCard {
+        width: 25%;
+    }
+    h1.mainHeading {
+        font-size: 2.9em;
+    }
+    #button1,
+    #button2 {
+        font-size: 0.75em;
+        padding: 7%
+    }
+}
